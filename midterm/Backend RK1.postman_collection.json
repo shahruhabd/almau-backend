@@ -6,12 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "Get",
+			"name": "GET",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/blogs",
+					"raw": "http://127.0.0.1:8000/api/blogs/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,17 +22,27 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"blogs"
+						"blogs",
+						""
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "post",
+			"name": "POST",
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"test Title\",\n    \"description\": \" test Description\",\n    \"owner\": \"Test owner\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/blogs",
 					"protocol": "http",
@@ -52,12 +62,21 @@
 			"response": []
 		},
 		{
-			"name": "put",
+			"name": "PUT",
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"qqqq\",\n    \"description\": \"dddd\",\n    \"owner\": \"asdasdasd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8000/api/1",
+					"raw": "http://localhost:8000/api/blogs/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -65,6 +84,7 @@
 					"port": "8000",
 					"path": [
 						"api",
+						"blogs",
 						"1"
 					]
 				}
@@ -72,10 +92,53 @@
 			"response": []
 		},
 		{
-			"name": "delete",
+			"name": "DELETE",
 			"request": {
 				"method": "DELETE",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/blogs/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET blog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
 			},
 			"response": []
 		}
